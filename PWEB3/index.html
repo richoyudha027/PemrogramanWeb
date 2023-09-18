@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplikasi Sejenis Kalkulator</title>
+</head>
+<body>
+    <h1>Ini Kalkulator</h1>
+    <form id="calculator">
+        <label for="input1"> Masukkan Angka Pertama: </label>
+        <input type="number" id="input1" required><br>
+        <label for="input2"> Masukkan Angka Kedua: </label>
+        <input type="number" id="input2" required><br>
+        <label for="operator">Operasi:</label>
+        <select id="operator">
+            <option value="penjumlahan">(+)</option>
+            <option value="pengurangan">(-)</option>
+            <option value="perkalian">(x)</option>
+            <option value="pembagian">(➗)</option>
+        </select><br>
+        <button type="button" id="hitung">Hasil</button>
+    </form>
+
+    <h2>Hasil:</h2>
+    <div id="hasil"></div>
+
+    <script>
+        document.getElementById("hitung").addEventListener("click", function () {
+            let angka1 = parseFloat(document.getElementById("input1").value);
+            let angka2 = parseFloat(document.getElementById("input2").value);
+            let operator = document.getElementById("operator").value;
+
+            let hasil;
+
+            if (operator === "penjumlahan") {
+                hasil = angka1 + angka2;
+            } else if (operator === "pengurangan") {
+                hasil = angka1 - angka2;
+            } else if (operator === "perkalian") {
+                hasil = angka1 * angka2;
+            } else if (operator === "pembagian") {
+                if (angka2 === 0) {
+                    hasil = "Operasi tidak valid";
+                } else {
+                    hasil = angka1 / angka2;
+                }
+            } else {
+                hasil = "Operasi tidak valid";
+            }
+
+            document.getElementById("hasil").textContent =+ hasil;
+        });
+    </script>
+</body>
+</html>
