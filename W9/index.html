@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator VueJS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <form class="calculator">
+            <input class="value" type="text" v-model="expression" readonly />
+            <span class="num clear" @click="clear()">C</span>
+            <span class="num opr" @click="appendToExpression('/')">÷</span>
+            <span class="num opr" @click="appendToExpression('*')">x</span>
+            <span class="num" @click="appendToExpression('7')">7</span>
+            <span class="num" @click="appendToExpression('8')">8</span>
+            <span class="num" @click="appendToExpression('9')">9</span>
+            <span class="num opr" @click="appendToExpression('-')">-</span>
+            <span class="num" @click="appendToExpression('4')">4</span>
+            <span class="num" @click="appendToExpression('5')">5</span>
+            <span class="num" @click="appendToExpression('6')">6</span>
+            <span class="num plus" @click="appendToExpression('+')">+</span>
+            <span class="num" @click="appendToExpression('1')">1</span>
+            <span class="num" @click="appendToExpression('2')">2</span>
+            <span class="num" @click="appendToExpression('3')">3</span>
+            <span class="num" @click="appendToExpression('0')">0</span>
+            <span class="num" @click="appendToExpression('000')">000</span>
+            <span class="num" @click="appendToExpression('.')">.</span>
+            <span class="num equal" @click="evaluateExpression()">=</span>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
